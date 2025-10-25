@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cherry B. David | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+    }
+
+    nav a {
+      color: #0072ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #0056b3;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    section h2 {
+      color: #0072ff;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #0072ff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .contact-info a {
+      color: #0072ff;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0072ff;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .skill-box {
+      background: #f0f8ff;
+      border-left: 5px solid #0072ff;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .profile-summary {
+      font-style: italic;
+      background: #eef7ff;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Cherry B. David</h1>
+    <p>📍 Magliman, City of San Fernando, Pampanga | 📞 0962-306-9769 | ✉️ <a href="mailto:cherryd613@gmail.com" style="color:white;">cherryd613@gmail.com</a></p>
+  </header>
+
+  <nav>
+    <a href="#profile">Profile</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="profile">
+    <h2>Profile Summary</h2>
+    <p class="profile-summary">
+      A fresh graduate with internship experience in administrative and technical environments. Skilled in
+      data entry, documentation, and office coordination, with strong attention to accuracy and efficiency.
+      A reliable, adaptable, and detail-oriented professional eager to contribute to organizational success
+      and continue developing new skills in a dynamic work setting.
+    </p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>Bachelor of Science in Information Technology</strong><br>
+        City College of San Fernando Pampanga (2021 – 2025)
+      </li>
+      <li><strong>Science, Technology, Engineering, Mathematics Strand</strong><br>
+        Our Lady of Fatima University – Pampanga Campus (2019 – 2021)
+      </li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul>
+      <li>
+        <strong>Intern – Technical and Administrative Support</strong><br>
+        Central Luzon College of Science and Technology, Inc. (September 2024 – December 2024)
+        <ul>
+          <li>Provided administrative support at the Registrar’s Office, including document processing, record management, and data organization.</li>
+          <li>Performed testing and quality assurance on the School Information Management System (SIMS) to ensure system accuracy, functionality, and user readiness.</li>
+          <li>Assisted in digitalizing school forms to enhance accessibility and streamline record-keeping processes, improving overall data efficiency.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Core Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-box">
+        <h4>Office & Administrative Skills</h4>
+        <ul>
+          <li>Data Entry & Record Management</li>
+          <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+          <li>Google Workspace (Docs, Sheets, Forms)</li>
+          <li>Email & Calendar Management</li>
+          <li>File Organization & Documentation</li>
+          <li>Customer Service & Communication</li>
+        </ul>
+      </div>
+
+      <div class="skill-box">
+        <h4>Technical Skills</h4>
+        <ul>
+          <li>Basic IT Troubleshooting</li>
+          <li>Canva for Design</li>
+          <li>CapCut for Video Editing</li>
+          <li>Basic HTML, CSS, and JavaScript</li>
+          <li>Database Management (MongoDB, MySQL)</li>
+        </ul>
+      </div>
+
+      <div class="skill-box">
+        <h4>Soft Skills</h4>
+        <ul>
+          <li>Time Management & Multitasking</li>
+          <li>Team Collaboration</li>
+          <li>Adaptability & Reliability</li>
+          <li>Attention to Detail</li>
+          <li>Problem Solving</li>
+          <li>Professionalism & Work Ethics</li>
+          <li>Willingness to Learn</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Connect with Me</h2>
+    <div class="contact-info">
+      <p>📧 Email: <a href="mailto:cherryd613@gmail.com">cherryd613@gmail.com</a></p>
+      <p>💼 LinkedIn: <a href="https://linkedin.com/in/cherry-david" target="_blank">linkedin.com/in/cherry-david</a></p>
+      <p>🌐 Facebook: <a href="https://facebook.com/dyablitah" target="_blank">facebook.com/dyablitah</a></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Cherry B. David | Designed with 💙 and professionalism.
+  </footer>
+</body>
+</html>
