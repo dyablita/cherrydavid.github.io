@@ -14,84 +14,100 @@
     }
 
     body {
-      background: #f5f7fa;
+      display: flex;
+      min-height: 100vh;
+      background-color: #f5f5f5;
       color: #222;
-      line-height: 1.6;
     }
 
-    header {
-      background: linear-gradient(135deg, #0072ff, #00c6ff);
-      color: white;
-      padding: 40px 20px;
+    /* Sidebar */
+    aside {
+      width: 280px;
+      background: #111;
+      color: #f1f1f1;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
     }
 
-    header h1 {
-      font-size: 2rem;
+    aside img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      margin-bottom: 20px;
+    }
+
+    aside h1 {
+      font-size: 1.4rem;
       font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    aside p {
+      font-size: 0.9rem;
+      color: #ccc;
       margin-bottom: 10px;
     }
 
-    header p {
-      font-size: 1rem;
-      opacity: 0.95;
-    }
-
-    .profile-image {
-      display: flex;
-      justify-content: center;
+    .sidebar-links {
       margin-top: 25px;
+      width: 100%;
     }
 
-    .profile-image img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid white;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .profile-image img:hover {
-      transform: scale(1.05);
-    }
-
-    nav {
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      padding: 15px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: #0072ff;
+    .sidebar-links a {
+      display: block;
+      color: #f1f1f1;
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+      padding: 10px 0;
+      border-bottom: 1px solid #333;
+      font-size: 0.95rem;
+      transition: all 0.3s;
     }
 
-    nav a:hover {
-      color: #0056b3;
+    .sidebar-links a:hover {
+      background: #222;
+      padding-left: 10px;
+    }
+
+    .contact-info {
+      margin-top: auto;
+      font-size: 0.85rem;
+      color: #bbb;
+    }
+
+    .contact-info a {
+      color: #bbb;
+      text-decoration: none;
+    }
+
+    /* Main Content */
+    main {
+      margin-left: 280px;
+      padding: 40px;
+      flex: 1;
     }
 
     section {
-      max-width: 900px;
-      margin: 40px auto;
       background: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     section h2 {
-      color: #0072ff;
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-      border-bottom: 2px solid #0072ff;
+      font-size: 1.3rem;
+      color: #111;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #111;
       display: inline-block;
       padding-bottom: 5px;
     }
@@ -103,24 +119,14 @@
 
     ul li {
       margin-bottom: 8px;
+      color: #333;
     }
 
-    .contact-info {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    .contact-info a {
-      color: #0072ff;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0072ff;
-      color: white;
-      margin-top: 40px;
+    .profile-summary {
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 8px;
+      font-style: italic;
     }
 
     .skills-grid {
@@ -131,144 +137,153 @@
     }
 
     .skill-box {
-      background: #f0f8ff;
-      border-left: 5px solid #0072ff;
+      background: #fafafa;
+      border-left: 4px solid #333;
       padding: 15px;
-      border-radius: 10px;
+      border-radius: 8px;
     }
 
-    .profile-summary {
-      font-style: italic;
-      background: #eef7ff;
+    footer {
+      text-align: center;
       padding: 15px;
-      border-radius: 10px;
+      color: #555;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.6rem;
+    /* Responsive */
+    @media (max-width: 800px) {
+      body {
+        flex-direction: column;
       }
 
-      .profile-image img {
-        width: 120px;
-        height: 120px;
+      aside {
+        position: relative;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 15px;
       }
 
-      section {
-        margin: 20px 15px;
+      aside img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .sidebar-links {
+        display: none;
+      }
+
+      main {
+        margin-left: 0;
         padding: 20px;
       }
     }
   </style>
 </head>
-
 <body>
-  <header>
+  <aside>
+    <img src="images/Cherryd.jpg" alt="Cherry B. David">
     <h1>Cherry B. David</h1>
-    <p>📍 Magliman, City of San Fernando, Pampanga | 📞 0962-306-9769 | ✉️ <a href="mailto:cherryd613@gmail.com" style="color:white;">cherryd613@gmail.com</a></p>
-    <div class="profile-image">
-      <img src="images/Cherryd.jpg" alt="Cherry B. David Profile Picture">
+    <p>BS Information Technology<br>2021–2025</p>
+
+    <div class="sidebar-links">
+      <a href="#profile">Profile</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </div>
-  </header>
 
-  <nav>
-    <a href="#profile">Profile</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="profile">
-    <h2>Profile Summary</h2>
-    <p class="profile-summary">
-      A fresh graduate with internship experience in administrative and technical environments. Skilled in
-      data entry, documentation, and office coordination, with strong attention to accuracy and efficiency.
-      A reliable, adaptable, and detail-oriented professional eager to contribute to organizational success
-      and continue developing new skills in a dynamic work setting.
-    </p>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Bachelor of Science in Information Technology</strong><br>
-        City College of San Fernando Pampanga (2021 – 2025)
-      </li>
-      <li><strong>Science, Technology, Engineering, Mathematics Strand</strong><br>
-        Our Lady of Fatima University – Pampanga Campus (2019 – 2021)
-      </li>
-    </ul>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <ul>
-      <li>
-        <strong>Intern – Technical and Administrative Support</strong><br>
-        Central Luzon College of Science and Technology, Inc. (September 2024 – December 2024)
-        <ul>
-          <li>Provided administrative support at the Registrar’s Office, including document processing, record management, and data organization.</li>
-          <li>Performed testing and quality assurance on the School Information Management System (SIMS) to ensure system accuracy, functionality, and user readiness.</li>
-          <li>Assisted in digitalizing school forms to enhance accessibility and streamline record-keeping processes, improving overall data efficiency.</li>
-        </ul>
-      </li>
-    </ul>
-  </section>
-
-  <section id="skills">
-    <h2>Core Skills</h2>
-
-    <div class="skills-grid">
-      <div class="skill-box">
-        <h4>Office & Administrative Skills</h4>
-        <ul>
-          <li>Data Entry & Record Management</li>
-          <li>Microsoft Office (Word, Excel, PowerPoint)</li>
-          <li>Google Workspace (Docs, Sheets, Forms)</li>
-          <li>Email & Calendar Management</li>
-          <li>File Organization & Documentation</li>
-          <li>Customer Service & Communication</li>
-        </ul>
-      </div>
-
-      <div class="skill-box">
-        <h4>Technical Skills</h4>
-        <ul>
-          <li>Basic IT Troubleshooting</li>
-          <li>Canva for Design</li>
-          <li>CapCut for Video Editing</li>
-          <li>Basic HTML, CSS, and JavaScript</li>
-          <li>Database Management (MongoDB, MySQL)</li>
-        </ul>
-      </div>
-
-      <div class="skill-box">
-        <h4>Soft Skills</h4>
-        <ul>
-          <li>Time Management & Multitasking</li>
-          <li>Team Collaboration</li>
-          <li>Adaptability & Reliability</li>
-          <li>Attention to Detail</li>
-          <li>Problem Solving</li>
-          <li>Professionalism & Work Ethics</li>
-          <li>Willingness to Learn</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Connect with Me</h2>
     <div class="contact-info">
-      <p>📧 Email: <a href="mailto:cherryd613@gmail.com">cherryd613@gmail.com</a></p>
+      <p><a href="mailto:cherryd613@gmail.com">cherryd613@gmail.com</a></p>
+      <p>📞 0962-306-9769</p>
+      <p>📍 Magliman, San Fernando, Pampanga</p>
+    </div>
+  </aside>
+
+  <main>
+    <section id="profile">
+      <h2>Profile Summary</h2>
+      <p class="profile-summary">
+        A fresh graduate with internship experience in administrative and technical environments. Skilled in
+        data entry, documentation, and office coordination, with strong attention to accuracy and efficiency.
+        A reliable, adaptable, and detail-oriented professional eager to contribute to organizational success
+        and continue developing new skills in a dynamic work setting.
+      </p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Bachelor of Science in Information Technology</strong><br>
+          City College of San Fernando Pampanga (2021 – 2025)
+        </li>
+        <li><strong>Science, Technology, Engineering, Mathematics Strand</strong><br>
+          Our Lady of Fatima University – Pampanga Campus (2019 – 2021)
+        </li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul>
+        <li>
+          <strong>Intern – Technical and Administrative Support</strong><br>
+          Central Luzon College of Science and Technology, Inc. (September 2024 – December 2024)
+          <ul>
+            <li>Provided administrative support at the Registrar’s Office, including document processing, record management, and data organization.</li>
+            <li>Performed testing and quality assurance on the School Information Management System (SIMS) to ensure system accuracy and functionality.</li>
+            <li>Assisted in digitalizing school forms to enhance accessibility and streamline record-keeping processes.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Core Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h4>Office & Administrative</h4>
+          <ul>
+            <li>Data Entry & Record Management</li>
+            <li>Microsoft Office Suite</li>
+            <li>Google Workspace Tools</li>
+            <li>Email & Calendar Management</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h4>Technical</h4>
+          <ul>
+            <li>Basic IT Troubleshooting</li>
+            <li>Canva & CapCut</li>
+            <li>Basic HTML, CSS, JavaScript</li>
+            <li>Database (MongoDB, MySQL)</li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h4>Soft Skills</h4>
+          <ul>
+            <li>Team Collaboration</li>
+            <li>Adaptability & Reliability</li>
+            <li>Attention to Detail</li>
+            <li>Professionalism & Work Ethics</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Connect</h2>
       <p>💼 LinkedIn: <a href="https://linkedin.com/in/cherry-david" target="_blank">linkedin.com/in/cherry-david</a></p>
       <p>🌐 Facebook: <a href="https://facebook.com/dyablitah" target="_blank">facebook.com/dyablitah</a></p>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    &copy; 2025 Cherry B. David | Designed with 💙 and professionalism.
-  </footer>
+    <footer>
+      &copy; 2025 Cherry B. David | Simple, Elegant, Professional
+    </footer>
+  </main>
 </body>
 </html>
